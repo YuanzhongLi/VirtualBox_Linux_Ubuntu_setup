@@ -132,6 +132,80 @@ Hiragana
 // superkey + space (change input)
 ```
 
-### vscode
+### Ignore upper or lower case at bash
+```
+# wirte at /etc/inputrc
+set completion-ignore-case on
+// push Ctrl-x and Ctrl-r
+```
 
-### git
+### Change browser to Chrome
+[link](https://inab818.site/linux/ubuntu-20-04-lts-google-chrome-download-install/)
+
+### Git
+```
+$ sudo apt install git
+// check
+$ dpkg -l git
+
+$ git config --global user.name <your_user_name>
+$ git config --global user.email <your_email>
+
+# add your id_rsa(secret key)
+~/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+<your_secret_key>
+-----END OPENSSH PRIVATE KEY-----
+
+# set your config
+~/.ssh/config
+Host github
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
+  User git
+
+# check id_rsa access right
+$ cd ~/.ssh
+$ ls -l
+// if the right is too loose
+$ chmod 600 id_rsa
+$ ssh-add id_ras
+
+// NOTE: if you access gitbub before add secret key, you should erase known_hosts
+
+
+// ~/.bashrc
+# display github branch
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+if [ -f /etc/bash_completion.d/git-prompt ]; then
+    export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1) \n\[\033[01;34m\]\$\[\033[00m\] '
+else
+    export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \n\[\033[01;34m\]\$\[\033[00m\] '
+fi
+
+```
+
+### VSCode
+Download deb from [VSCode official site](https://code.visualstudio.com/)
+```
+$ sudo apt install ./<Downloaded>.deb
+$ sudo apt install -y apt-transport-https
+$ sudo apt update
+
+# open VSCode
+$ code
+```
+
+#### Extensions
+```
+- Emacs Friendly Keymap
+-
+```
+
+### Typing and Mouse
+```
+Mouse & Touchpad
+Universal Access -> Typing -> Repeat Keys
+```
