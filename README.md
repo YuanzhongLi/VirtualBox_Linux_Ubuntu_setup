@@ -87,7 +87,10 @@ device
 Shared Clipboard
 ```
 
-### Japanese keyboard
+### Copy Host <> VM
+![clipboard](clipboard.png)
+
+### Japanese keyboard (Only if you use US keyboard)
 ```
 $ sudo dpkg-reconfigure keyboard-configuration
 Generic 105-key PC (intl.)
@@ -126,10 +129,16 @@ Japanese (Mozc)
 # select en(right up)
 Japanese (Mozc)
 
-# secect A(right up)
+# select A(right up)
 Input Mode (A)
 Hiragana
 // superkey + space (change input)
+```
+
+if you can not find Japanese (Mozc)
+```
+sudo apt remove ibus-mozc
+reboot
 ```
 
 ### Ignore upper or lower case at bash
@@ -198,7 +207,7 @@ $ sudo apt update
 $ code
 ```
 
-#### Extensions
+### Extensions
 ```
 - Emacs Friendly Keymap
 -
