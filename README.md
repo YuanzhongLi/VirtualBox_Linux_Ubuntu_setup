@@ -1,13 +1,18 @@
-# Setup Ubuntu on VirtualBox
-[ref link](https://www.dev2qa.com/how-to-install-ubuntu-on-virtualbox-mac/#:~:text=Start%20the%20virtual%20machine%2C%20and,the%20guest%20additions%20cd%20image.)
-## DownLoad
-go to [Ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) and download Ubuntu version you want use
+# Mac Setup Ubuntu on VirtualBox
+
+
+## DownLoads
+- [Virtual Box](https://www.oracle.com/jp/virtualization/technologies/vm/downloads/virtualbox-downloads.html)
+
+- [Ubuntu](https://ubuntu.com/download/desktop)  
+download Ubuntu version you want use
 ```
+ex.)
 ubuntu-20.04.1-desktop-amd64.iso
 ```
 
 ## Setup
-### 1. Create new
+### 1. Create new VM
 Open virtual box and seclect tool and selcet create new(N)
 ```
 # type name
@@ -17,7 +22,7 @@ Ubuntu20.04LTS
 /Users/<user_name>/VirtualBox VMs
 
 # machine RAM size (optional)
-ex) 8192 MB (8GB)
+ex.) 8192 MB (8GB)
 
 # hard disc
 create virtual hard disc
@@ -29,24 +34,24 @@ VDI (VirtualBox Disk image)
 mutable size
 
 # file directory and file size (optional)
-ex) /Users/<user_name>/VirtualBox VMs/Ubuntu20.04LTS
-ex) 32.00 GB
+ex.) /Users/<user_name>/VirtualBox VMs/Ubuntu20.04LTS
+ex.) 32.00 GB
 ```
 
-### 2.Install
+### 2. Install Ubuntu
 Select start(T)
 ```
 # click folder icon and attach disc
 ubuntu-20.04.1-desktop-amd64.iso
 
 # select lanuage and click install
-English
+ex.) English
 
 # install type
 erase disc and install Ubuntu
 
 # where you are
-Tokyo
+ex.) Tokyo
 
 # fill your personal data
 <your_name>
@@ -60,7 +65,7 @@ Tokyo
 // jsut in case, after restart make a snapshot (<name: after_install>)
 ```
 
-### 3. Update
+### 3. Update packages
 open terminal
 ```
 $ sudo apt update
@@ -69,10 +74,8 @@ $ sudo apt upgrade
 
 ## 4. Options
 ### Mutable screen size
+Virtual Boxのスクリーンを調整すると自動でUbuntuのデスクトップも調整される
 ```
-# install required packages
-$ sudo apt install gcc g++ make
-
 # window
 device
 Guest Additions CD image ...
@@ -81,13 +84,16 @@ Run
 # Authentication
 Power Off
 Restart
+```
 
+### Share Clipboard (Host <-> VM)
+ホストとVMでクリップボードを共有する．  
+ホスト（VM）でコピーしたものがVM（ホスト）でペーストできるようになる．
+```
 # Bidirectional copy
 device
 Shared Clipboard
 ```
-
-### Copy Host <> VM
 ![clipboard](clipboard.png)
 
 ### Japanese keyboard (Only if you use US keyboard)
@@ -215,7 +221,6 @@ $ code
 ### Extensions
 ```
 - Emacs Friendly Keymap
--
 ```
 
 ### Typing and Mouse
