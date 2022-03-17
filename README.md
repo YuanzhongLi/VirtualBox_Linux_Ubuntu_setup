@@ -166,6 +166,11 @@ $ git config --global user.email <your_email>
 <your_secret_key>
 -----END OPENSSH PRIVATE KEY-----
 
+# if you do not have keys
+cd ~/.ssh
+ssh-keygen -t rsa
+# put your public key on github
+
 # set your config
 ~/.ssh/config
 Host github
